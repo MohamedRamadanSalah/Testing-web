@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order - Delizioso</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="order-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <h1>Delizioso</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Menu</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Order Form -->
+    <main class="order-main">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-header">
+                    <h2>Place Your Order</h2>
+                    <p>Complete your order details below</p>
+                </div>
+
+                <!-- Order Type Selection -->
+                <div class="order-type-section">
+                    <h3>How would you like to enjoy your meal?</h3>
+                    <div class="order-type-options">
+                        <div class="order-type-option active" data-type="dine-in">
+                            <i class="fas fa-chair"></i>
+                            <span>Dine In</span>
+                        </div>
+                        <div class="order-type-option" data-type="delivery">
+                            <i class="fas fa-truck"></i>
+                            <span>Delivery</span>
+                        </div>
+                        <div class="order-type-option" data-type="takeout">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Take Out</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selected Product Display -->
+                <div class="selected-product" id="selectedProduct">
+                    <h3>Your Selection</h3>
+                    <div class="product-summary">
+                        <!-- Product details will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Customer Details Form -->
+                <form class="order-form" id="orderForm">
+                    <!-- Dine-in specific fields -->
+                    <div class="form-section" id="dineInSection">
+                        <h3>Dine-in Details</h3>
+                        <div class="form-group">
+                            <label for="tableNumber">Table Number</label>
+                            <select id="tableNumber" name="tableNumber" required>
+                                <option value="">Select Table</option>
+                                <option value="1">Table 1</option>
+                                <option value="2">Table 2</option>
+                                <option value="3">Table 3</option>
+                                <option value="4">Table 4</option>
+                                <option value="5">Table 5</option>
+                                <option value="6">Table 6</option>
+                                <option value="7">Table 7</option>
+                                <option value="8">Table 8</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Delivery specific fields -->
+                    <div class="form-section hidden" id="deliverySection">
+                        <h3>Delivery Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <textarea id="address" name="address" rows="3" placeholder="Street address, city, state, zip code" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="locationLink">Location Link (Optional)</label>
+                            <input type="url" id="locationLink" name="locationLink" placeholder="https://maps.google.com/... or share location link">
+                            <small class="form-hint">You can paste a Google Maps link or share your location</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryNotes">Delivery Notes (Optional)</label>
+                            <textarea id="deliveryNotes" name="deliveryNotes" rows="2" placeholder="Apartment number, special instructions..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Takeout specific fields -->
+                    <div class="form-section hidden" id="takeoutSection">
+                        <h3>Pickup Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickupFirstName">First Name</label>
+                                <input type="text" id="pickupFirstName" name="pickupFirstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pickupLastName">Last Name</label>
+                                <input type="text" id="pickupLastName" name="pickupLastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupPhone">Phone Number</label>
+                            <input type="tel" id="pickupPhone" name="pickupPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupTime">Pickup Time</label>
+                            <select id="pickupTime" name="pickupTime" required>
+                                <option value="">Select Time</option>
+                                <option value="asap">ASAP</option>
+                                <option value="15">15 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60">1 hour</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <h3>Payment Method</h3>
+                        <div class="payment-options">
+                            <div class="payment-option active" data-method="cash">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cash</span>
+                            </div>
+                            <div class="payment-option" data-method="card">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Credit Card</span>
+                            </div>
+                            <div class="payment-option" data-method="digital">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Digital Wallet</span>
+                            </div>
+                        </div>
+
+                        <!-- Card Details (hidden by default) -->
+                        <div class="card-details hidden" id="cardDetails">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" name="cardName" placeholder="John Doe">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Tax (8.5%)</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Delivery Fee</span>
+                            <span id="deliveryFee">$0.00</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Actions -->
+                    <div class="order-actions">
+                        <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                            <i class="fas fa-arrow-left"></i> Back to Menu
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-large" id="placeOrderBtn">
+                            <i class="fas fa-check"></i> Place Order
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Order Success Modal -->
+    <div class="modal" id="orderSuccessModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Order Placed Successfully!</h3>
+                <button class="modal-close" id="orderSuccessModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="success-message">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h4>Thank you for your order!</h4>
+                    <p id="orderConfirmationMessage">Your order has been received and is being prepared.</p>
+                    <div class="order-details" id="orderDetails">
+                        <!-- Order details will be shown here -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

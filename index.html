@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delizioso Restaurant - Authentic Italian Cuisine</title>
+    <meta name="description" content="Experience authentic Italian cuisine at Delizioso Restaurant. Fresh ingredients, expert chefs, and unforgettable flavors.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+</head>
+<body class="home-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <h1>Delizioso</h1>
+                </div>
+                <nav class="nav" aria-label="Main Navigation">
+                    <a href="#menu" class="nav-link active" aria-current="page">
+                        <i class="fas fa-utensils"></i> Menu
+                    </a>
+                    <a href="#about" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <a href="admin.html" class="nav-link admin-link">
+                        <i class="fas fa-cog"></i> Admin
+                    </a>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-title" class="hero-title">Authentic Italian Cuisine</h1>
+                <p class="hero-subtitle">Experience the taste of Italy with our handcrafted dishes made from fresh, local ingredients</p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn btn-primary btn-large" aria-label="View our menu">
+                        <i class="fas fa-book-open"></i> View Menu
+                    </a>
+                    <a href="order.html" class="btn btn-outline btn-large" aria-label="Place an order">
+                        <i class="fas fa-shopping-cart"></i> Order Now
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Artisan Dishes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.8★</span>
+                        <span class="stat-label">Customer Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section" aria-labelledby="menu-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="menu-title">Our Signature Menu</h2>
+                <p>Each dish is crafted with passion and the finest ingredients</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="category-filter" role="tablist" aria-label="Menu categories">
+                <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">
+                    All Dishes
+                </button>
+                <button class="filter-btn" data-category="pizza" role="tab" aria-selected="false">
+                    <i class="fas fa-pizza-slice"></i> Pizza
+                </button>
+                <button class="filter-btn" data-category="pasta" role="tab" aria-selected="false">
+                    <i class="fas fa-utensils"></i> Pasta
+                </button>
+                <button class="filter-btn" data-category="salad" role="tab" aria-selected="false">
+                    <i class="fas fa-leaf"></i> Salads
+                </button>
+                <button class="filter-btn" data-category="dessert" role="tab" aria-selected="false">
+                    <i class="fas fa-ice-cream"></i> Desserts
+                </button>
+                <button class="filter-btn" data-category="drink" role="tab" aria-selected="false">
+                    <i class="fas fa-wine-glass-alt"></i> Drinks
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid" role="region" aria-label="Menu items">
+                <!-- Products will be loaded here by JavaScript -->
+                <div class="loading-products" aria-live="polite">
+                    Loading menu items...
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn load-more-btn" id="loadMoreBtn" aria-label="Load more menu items">
+                    <i class="fas fa-plus"></i> View More Dishes
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section" aria-labelledby="about-title">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 id="about-title">Our Story</h2>
+                    <p>Founded in 2004, Delizioso brings authentic Italian flavors to your table. Our family recipes have been passed down for generations, combining traditional techniques with modern culinary artistry.</p>
+                    <p>We source our ingredients directly from local farms and Italian importers to ensure every dish captures the true essence of Italy.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Farm Fresh</h4>
+                                <p>Locally sourced organic ingredients</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-chef"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Expert Chefs</h4>
+                                <p>Trained in authentic Italian cuisine</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Award Winning</h4>
+                                <p>Multiple culinary awards since 2010</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Made with Love</h4>
+                                <p>Every dish prepared with passion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder" role="img" aria-label="Delizioso restaurant interior">
+                        <i class="fas fa-image"></i>
+                        <span>Restaurant Ambiance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-header">
+                    <h2 id="contact-title">Visit Us Today</h2>
+                    <p>We'd love to serve you at our restaurant</p>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Our Location</h3>
+                            <address>
+                                123 Italian Street<br>
+                                Food City, FC 12345<br>
+                                United States
+                            </address>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Opening Hours</h3>
+                            <p><strong>Mon-Thu:</strong> 11:00 AM - 10:00 PM</p>
+                            <p><strong>Fri-Sat:</strong> 11:00 AM - 11:00 PM</p>
+                            <p><strong>Sunday:</strong> 12:00 PM - 9:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Contact Info</h3>
+                            <p><strong>Phone:</strong> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:info@delizioso.com">info@delizioso.com</a></p>
+                            <p><strong>Catering:</strong> <a href="tel:+15551234568">+1 (555) 123-4568</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-actions">
+                    <a href="tel:+15551234567" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="https://maps.google.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-map"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-utensils"></i>
+                    <span class="logo-text">Delizioso</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#menu" class="footer-link">Menu</a>
+                    <a href="#about" class="footer-link">About Us</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                    <a href="order.html" class="footer-link">Order Online</a>
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-link">Terms of Service</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Visit our Facebook page">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Visit our Instagram profile">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Visit our Twitter page">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Visit our TripAdvisor page">
+                        <i class="fab fa-tripadvisor"></i>
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Delizioso Restaurant. All rights reserved.</p>
+                    <p class="footer-note">Made with <i class="fas fa-heart" style="color: #FF8C73;"></i> for food lovers everywhere</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Product Details</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modalCloseBtn">Continue Browsing</button>
+                <button class="btn btn-primary" id="orderBtn">
+                    <i class="fas fa-shopping-cart"></i> Order Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" aria-live="assertive" hidden>
+        <div class="loading-spinner">
+            <i class="fas fa-utensils"></i>
+        </div>
+        <p class="loading-text">Preparing your experience...</p>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+    <!-- Scripts -->
+    <script src="js/data.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/main.js" defer></script>
+    
+    <!-- Skip to main content link (hidden until focused) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+</body>
+</html>
