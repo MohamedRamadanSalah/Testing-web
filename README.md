@@ -2,7 +2,7 @@
 
 A fully interactive frontend demo restaurant web platform built with HTML, CSS, and JavaScript. This is a demonstration project showcasing modern web development techniques with smooth animations and responsive design.
 
-## 🚀 Features
+## Features
 
 ### Main Restaurant Page (`index.html`)
 - **Product Catalog**: Browse through 12+ restaurant products with categories (Pizza, Pasta, Salads, Desserts, Drinks)
